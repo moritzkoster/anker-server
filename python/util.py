@@ -1,15 +1,30 @@
-# def cache1d(func):
-#     def inner(*args, **kwargs):
-#         with open("last.json", r) as file:
-#             last = json.load(file)
-#         if last["name"]["date"] == date.today():
-#             return last["name"]["answer"]
-#         else:
-#             function
+from datetime import date
 
-def test():
-    def inner(func):
-        print("ENTER inner")
-        func()
-        print("EXIT inner")
-    return inner
+cachelist = {}
+
+#last = {"anker": {"date": 0, "info": ""}}
+
+def cache1d(function):
+    def wrapper(name):
+        if name not in cachelist:
+            cachelist[name] = {"date": 0, "info": ""}
+        if cachelist[name]["date"] == date.today():
+            print("already existed")
+            return cachelist[name]["info"]
+        else:
+            info = function(name)
+            #info = "this strange shit"
+            cachelist[name]["info"] = info
+            cachelist[name]["date"] = date.today()
+            print("new request")
+            return info
+    return wrapper
+
+#
+# def cachelist():
+#     cachelist = {}
+#     for element in list:
+#         cachelist[element] = {"date": 0, "info": ""}
+#     return cachelist
+
+#cachelist = cachelist()
