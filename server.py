@@ -1,15 +1,15 @@
 from flask import Flask, request, render_template, send_from_directory
 from flask_cors import CORS
 
-import json
-import os
-
-import requests
-from bs4 import BeautifulSoup
-
-from datetime import date
-
-import python.util as util
+# import json
+# import os
+#
+# import requests
+# from bs4 import BeautifulSoup
+#
+# from datetime import date
+#
+# import python.util as util
 import python.scrapers as scp
 
 app = app = Flask(__name__)

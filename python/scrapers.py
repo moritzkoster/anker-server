@@ -6,7 +6,7 @@ from datetime import date
 
 import python.util as util
 
-@util.cache1d
+@util.cache1d("coop")
 def coop_info(name):
     with open("data/coop.json", "r") as file: #Get scraper data
         coop = json.load(file) #parse json
@@ -22,7 +22,7 @@ def coop_info(name):
         return "Anker Halbe Priis"
     return "Anker aktion aber ned halbe priis."
 
-@util.cache1d
+@util.cache1d("denner")
 def denner_info(name):
     with open("data/denner.json", "r") as file: #Get scraper data
         denner = json.load(file) #parse json
