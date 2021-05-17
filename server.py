@@ -15,8 +15,13 @@ import python.scrapers as scp
 app = app = Flask(__name__)
 
 @app.route("/coop/<name>")
-def coop():
+def coop(name):
     return scp.coop_info(name)
+
+
+@app.route("/denner/<name>")
+def denner(name):
+    return scp.denner_info(name)
 
 if __name__ == "__main__":
     app.run()
