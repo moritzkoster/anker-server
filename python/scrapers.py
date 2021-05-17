@@ -24,4 +24,16 @@ def coop_info(name):
 
 @util.cache1d
 def denner_info(name):
-    return "this is the return value value of denner for: " + name #TODO
+    with open("data/denner.json", "r") as file: #Get scraper data
+        denner = json.load(file) #parse json
+
+    url = denner[name]["url"]
+    html_text = requests.get(url).text #get html page
+    soup = BeautifulSoup(html_text, 'html.parser')
+
+    promotion_field= soup.find(attrs={denner[name]["attr_key"]: denner[name]["attr_value"]})
+    if not promotion_field: #if Promotion
+        return "kei Aktion"
+    elif "42%" in promotion_field.get_text():
+        return "Anker isch 42%, los chauf!!!"
+    return "Anker aktion aber ned halbe priis."
