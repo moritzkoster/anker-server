@@ -1,0 +1,49 @@
+body {
+    background: url(bg.png);
+    color: #f80;
+}
+
+.content {
+    width: 780px;
+    border: #fff 1px solid;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    color: #ff0;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+}
+
+h2{
+  color: #f00;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+}
+marquee {
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+p {
+  color: #0f0;
+  font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+  font-weight: bold;
+
+}
+
+
+table {
+    width: 100%;
+}
+
+td {
+    text-align: center;
+    width: 50%;
+}
