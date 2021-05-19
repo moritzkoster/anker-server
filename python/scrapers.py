@@ -1,5 +1,5 @@
 import json
-
+import random
 import requests
 from bs4 import BeautifulSoup
 from datetime import date
@@ -17,10 +17,8 @@ def coop_info(name):
 
     promotion_field= soup.find(attrs={coop[name]["attr_key"]: coop[name]["attr_value"]}) #find promotion field
     if promotion_field == None: #if Promotion
-        return "kei Aktion"
-    elif "53%" in promotion_field.get_text():
-        return "Anker Halbe Priis"
-    return "Anker aktion aber ned halbe priis."
+        return "NOPROM"
+    return prom_answer(promotion_field.get_text(), "Coop")
 
 @util.cache1d("denner")
 def denner_info(name):
@@ -33,7 +31,11 @@ def denner_info(name):
 
     promotion_field= soup.find(attrs={denner[name]["attr_key"]: denner[name]["attr_value"]})
     if not promotion_field: #if Promotion
-        return "kei Aktion"
-    elif "42%" in promotion_field.get_text():
-        return "Anker isch 42%, los chauf!!!"
-    return "Anker aktion aber ned halbe priis."
+        return "NOPROM"
+    return prom_answer(promotion_field.get_text(), "Denner")
+
+def prom_answer(prom, store):
+    with open("data/textsDE.json", "r") as file:
+        aktion50 = json.load(file)
+    text = random.choice(aktion50)
+    return text.format(DISC=prom, STORE=store)
