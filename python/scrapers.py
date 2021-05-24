@@ -15,10 +15,10 @@ def coop_info(name):
     html_text = requests.get(url).text #get html page
     soup = BeautifulSoup(html_text, 'html.parser')
 
-    promotion_field= soup.find(attrs={coop[name]["attr_key"]: coop[name]["attr_value"]}) #find promotion field
+    promotion_field= soup.find(attrs=coop[name]["attrs"]) #find promotion field
     if promotion_field == None: #if Promotion
         return "NOPROM"
-    return prom_answer(promotion_field.get_text(), "Coop")
+    return anker_answer(name, promotion_field.get_text(), "Coop")
 
 @util.cache1d("denner")
 def denner_info(name):
@@ -29,13 +29,27 @@ def denner_info(name):
     html_text = requests.get(url).text #get html page
     soup = BeautifulSoup(html_text, 'html.parser')
 
-    promotion_field= soup.find(attrs={denner[name]["attr_key"]: denner[name]["attr_value"]})
+    promotion_field= soup.find(attrs=denner[name]["attrs"])
     if not promotion_field: #if Promotion
         return "NOPROM"
-    return prom_answer(promotion_field.get_text(), "Denner")
+    return prom_answer(name, promotion_field.get_text(), "Denner")
 
-def prom_answer(prom, store):
-    with open("data/textsDE.json", "r") as file:
+@util.cache1d("spar")
+def spar_info(name):
+    with open("data/spar.json", "r") as file: #Get scraper data
+        spar = json.load(file) #parse json
+
+    url = spar[name]["url"]
+    html_text = requests.get(url).text #get html page
+    soup = BeautifulSoup(html_text, 'html.parser')
+
+    promotion_field= soup.find(attrs=spar[name]["attrs"])
+    if not promotion_field: #if Promotion
+        return "NOPROM"
+    return answer_text(name, promotion_field.get_text(), "Spar")
+
+def answer(name, prom, store):
+    with open("data/" + name + ".json", "r") as file:
         aktion50 = json.load(file)
     text = random.choice(aktion50)
     return text.format(DISC=prom, STORE=store)

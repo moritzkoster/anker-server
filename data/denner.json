@@ -1,7 +1,6 @@
 {
   "anker": {
     "url": "https://www.denner.ch/de/aktionen/article/feldschloesschen-bier-original-69864a8cea/gf/bier/",
-    "attr_key": "class",
-    "attr_value": "sparen js-remove-expired has-gratis"
+    "attrs": {"class": "sparen js-remove-expired has-gratis"}
   }
 }
