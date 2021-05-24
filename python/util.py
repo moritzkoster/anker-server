@@ -3,7 +3,8 @@ import json
 import requests
 
 cachelist = {"coop": {},
-            "denner": {}
+            "denner": {},
+            "spar": {}
 }
 
 def cache1d(store): #decorator-Factory

@@ -18,7 +18,7 @@ def coop_info(name):
     promotion_field= soup.find(attrs=coop[name]["attrs"]) #find promotion field
     if promotion_field == None: #if Promotion
         return "NOPROM"
-    return anker_answer(name, promotion_field.get_text(), "Coop")
+    return answer(name, promotion_field.get_text(), "Coop")
 
 @util.cache1d("denner")
 def denner_info(name):
@@ -32,7 +32,7 @@ def denner_info(name):
     promotion_field= soup.find(attrs=denner[name]["attrs"])
     if not promotion_field: #if Promotion
         return "NOPROM"
-    return prom_answer(name, promotion_field.get_text(), "Denner")
+    return answer(name, promotion_field.get_text(), "Denner")
 
 @util.cache1d("spar")
 def spar_info(name):
@@ -46,7 +46,7 @@ def spar_info(name):
     promotion_field= soup.find(attrs=spar[name]["attrs"])
     if not promotion_field: #if Promotion
         return "NOPROM"
-    return answer_text(name, promotion_field.get_text(), "Spar")
+    return answer(name, promotion_field.get_text(), "Spar")
 
 def answer(name, prom, store):
     with open("data/" + name + ".json", "r") as file:
