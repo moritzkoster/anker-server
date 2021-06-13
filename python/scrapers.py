@@ -49,7 +49,8 @@ def spar_info(name):
     return answer(name, promotion_field.get_text(), "Spar")
 
 def answer(name, prom, store):
-    with open("data/" + name + ".json", "r") as file:
-        aktion50 = json.load(file)
-    text = random.choice(aktion50)
-    return text.format(DISC=prom, STORE=store)
+    # with open("data/" + name + ".json", "r") as file:
+    #     aktion50 = json.load(file)
+    # text = random.choice(aktion50)
+    #return text.format(DISC=prom, STORE=store)
+    return prom
