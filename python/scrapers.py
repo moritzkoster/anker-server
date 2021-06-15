@@ -8,8 +8,7 @@ import python.util as util
 
 @util.cache1d("coop")
 def coop_info(name):
-    with open("data/coop.json", "r") as file: #Get scraper data
-        coop = json.load(file) #parse json
+    coop = get_json("data/coop.json")
 
     url = coop[name]["url"]
     html_text = requests.get(url).text #get html page
@@ -22,8 +21,7 @@ def coop_info(name):
 
 @util.cache1d("denner")
 def denner_info(name):
-    with open("data/denner.json", "r") as file: #Get scraper data
-        denner = json.load(file) #parse json
+    denner = get_json("data/denner.json")
 
     url = denner[name]["url"]
     html_text = requests.get(url).text #get html page
@@ -36,8 +34,7 @@ def denner_info(name):
 
 @util.cache1d("spar")
 def spar_info(name):
-    with open("data/spar.json", "r") as file: #Get scraper data
-        spar = json.load(file) #parse json
+    spar = get_json("data/spar.json")
 
     url = spar[name]["url"]
     html_text = requests.get(url).text #get html page
@@ -54,3 +51,11 @@ def answer(name, prom, store):
     # text = random.choice(aktion50)
     #return text.format(DISC=prom, STORE=store)
     return prom
+
+def get_json(path): # I know this is shit but dont know how to change it.
+    try:
+        with open(path, "r") as file: #try if its in working directory
+            return json.load(file)
+    except:
+        with open(f"/var/www/anker-server/{path}", "r") as file: # else use static path.
+            return json.load(file)
