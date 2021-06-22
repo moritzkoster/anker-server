@@ -21,5 +21,9 @@ def spar(name):
 def hello():
     return render_template("LmH_V1.html")
 
+@app.route('/static/<path:path>')
+def file(path):
+    return send_from_directory('static', path)
+
 if __name__ == "__main__":
     app.run()
