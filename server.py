@@ -3,7 +3,7 @@ from flask_cors import CORS
 
 import python.scrapers as scp
 
-app = app = Flask(__name__, static_url_path="")
+app = Flask(__name__, static_url_path="")
 
 @app.route("/coop/<name>")
 def coop(name):
