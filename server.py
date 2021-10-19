@@ -17,6 +17,10 @@ def denner(name):
 def spar(name):
     return scp.spar_info(name)
 
+@app.route("/migros/<name>")
+def migros(name):
+    return scp.migros_info(name)
+
 @app.route("/")
 def hello():
     return render_template("LmH_V1.html")

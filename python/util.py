@@ -4,7 +4,8 @@ import requests
 
 cachelist = {"coop": {},
             "denner": {},
-            "spar": {}
+            "spar": {},
+            "migros" : {}
 }
 
 def cache1d(store): #decorator-Factory
