@@ -1,22 +1,22 @@
 {
   "anker": {
     "url": "https://www.coop.ch/de/lebensmittel/getraenke/bier/multipacks-ab-12x50cl/anker-lager-bier-24x50cl/p/3458809",
-    "attrs" : {"data-testauto": "productlistpromotion3458809"}
+    "attrs" : {"class": "productBasicInfo__price-text-saving-inner"}
   },
   "quoellfrisch10" : {
     "url": "https://www.coop.ch/de/lebensmittel/getraenke/bier/helles-bier-lager/flaschen/appenzeller-bier-quoellfrisch-10x33cl/p/6506979",
-    "attrs" : {"data-testauto": "productlistpromotion3458809"}
+    "attrs" : {"class": "productBasicInfo__price-text-saving-inner"}
   },
   "quoellfrisch6" : {
     "url": "https://www.coop.ch/de/lebensmittel/getraenke/bier/bier-im-multipack/appenzeller-bier-quoellfrisch-6x50cl/p/3752143",
-    "attrs" : {"data-testauto": "productlistpromotion3458809"}
+    "attrs" : {"class": "productBasicInfo__price-text-saving-inner"}
   },
   "quoellfrisch10n" : {
     "url": "https://www.coop.ch/de/lebensmittel/getraenke/bier/bier-im-multipack/appenzeller-bier-quoellfrisch-naturtrueb-10x33cl/p/4441118",
-    "attrs" : {"data-testauto": "productlistpromotion3458809"}
+    "attrs" : {"class": "productBasicInfo__price-text-saving-inner"}
   },
   "quoellfrisch6n" : {
     "url": "https://www.coop.ch/de/lebensmittel/getraenke/bier/bier-im-multipack/appenzeller-bier-quoellfrisch-trueb-6x50cl/p/5905523",
-    "attrs" : {"data-testauto": "productlistpromotion3458809"}
+    "attrs" : {"class": "productBasicInfo__price-text-saving-inner"}
   }
 }
