@@ -1,6 +1,10 @@
 {
-  "anker": {
-    "url": "https://www.denner.ch/de/aktionen/article/feldschloesschen-bier-original-69864a8cea/gf/bier/",
-    "attrs": {"class": "sparen js-remove-expired has-gratis"}
+  "sagres": {
+    "url": "https://www.denner.ch/de/aktionen/article/sagres-bier-4/",
+    "attrs": {"class": "sparen js-remove-expired"}
+  },
+  "superbock": {
+    "url": "https://www.denner.ch/de/aktionen/article/super-bock-bier/",
+    "attrs": {"class": "sparen js-remove-expired"}
   }
 }
